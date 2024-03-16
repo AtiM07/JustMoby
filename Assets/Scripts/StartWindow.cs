@@ -15,14 +15,19 @@ public class StartWindow : MonoBehaviour
 
     private void OpenWindow()
     {
-        //заглушка дл€ открыти€ окна. заполнить рандомными значени€ми
-        int.TryParse(CountObject.text, out var count);
-
-        var model = count > 5
+         int.TryParse(CountObject.text.Trim((char)8203), out var count); 
+         
+        if (count < 3 || count > 6)
+        {
+            GameManager.Instance.InstanceInfoPanel("¬ведите число от 3 до 6!");
+            return;
+        }
+        
+        var model = count <5
             ? new WindowModel()
             {
                 Header = "Ёнергетический набор",
-                Description = "Ётот набор дл€ IT-пециалиста спасет любого понурого работника сферы информационных систем и технологий. ¬сего пара кружек кофе и ваш работник будет в ресурсе и в потоке!",
+                Description = "Ётот набор дл€ IT-специалиста спасет любого работника сферы информационных систем и технологий. ¬сего пара кружек кофе и ваш работник будет в ресурсе и в потоке!",
                 IconName = "зар€дка",
                 Objects = new List<Object>
                 {
@@ -51,5 +56,11 @@ public class StartWindow : MonoBehaviour
 
         GameManager.Instance.SetModelParameter(model);
         GameManager.Instance.InstanceWindow();
+    }
+
+    private int CheckCount(string value) 
+    {
+        int.TryParse(value, out var count);
+        return count;
     }
 }

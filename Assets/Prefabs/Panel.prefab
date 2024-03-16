@@ -1103,9 +1103,7 @@ MonoBehaviour:
   _itemsImages:
   - {fileID: 21300000, guid: 2c9506bbd7f62dc47a6153f0cd9208ac, type: 3}
   - {fileID: 21300000, guid: 19dea149431973e48926021c30ddd0f3, type: 3}
-  Init:
-    m_PersistentCalls:
-      m_Calls: []
+  BuyButton: {fileID: 2384468522043830736}
 --- !u!1 &8968709699418860261
 GameObject:
   m_ObjectHideFlags: 0

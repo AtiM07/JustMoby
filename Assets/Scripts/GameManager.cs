@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public WindowModel Model { get; private set; }
     
     [SerializeField] private GameObject WindowPanel;
+    
+    [SerializeField] private GameObject InfoPanel;
 
     private void Awake()
     {
@@ -21,5 +23,11 @@ public class GameManager : MonoBehaviour
     public void InstanceWindow()
     {
         Instantiate(WindowPanel, Vector3.zero, Quaternion.identity, transform.parent);
+    }
+    
+    public void InstanceInfoPanel(string message)
+    {
+        var gameObj = Instantiate(InfoPanel, Vector3.zero, Quaternion.identity, transform.parent);
+        gameObj.GetComponent<InfoPanel>().SetMessage(message);
     }
 }

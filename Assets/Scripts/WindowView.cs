@@ -1,20 +1,19 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WindowView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI Header;
+    [SerializeField] private TMP_Text Header;
     [SerializeField] private TextMeshProUGUI Description;
     [SerializeField] private TextMeshProUGUI Price;
     [SerializeField] private TextMeshProUGUI RealPrice;
     [SerializeField] private TextMeshProUGUI Sale;
     [SerializeField] public Image MainIicon;
     [SerializeField] private Sprite[] _itemsImages;
-
-    public UnityEvent Init;
+    
+    [SerializeField] private Button BuyButton;
 
     private void Start()
     {
@@ -25,7 +24,12 @@ public class WindowView : MonoBehaviour
         SetPrice(Price, model.Price);
         SetSale(model.Sale);
         SetMainIcon(model.IconName);
-        Init.Invoke();
+        
+        BuyButton.onClick.AddListener(() =>
+        {
+            GameManager.Instance.InstanceInfoPanel("По FaceID было списано с Вашего счета 1000$. Спасибо!");
+            DestroyImmediate(gameObject);
+        });
     }
 
     private void SetSale(decimal sale) => Sale.text = sale + "%";

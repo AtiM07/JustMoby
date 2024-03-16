@@ -40,7 +40,7 @@ public class StartWindow : MonoBehaviour
                     new Object { Name = "кофе", Count = 50 }
                 },
                 Price = 24,
-                Sale = 14
+                Sale = 0
             }
             : new WindowModel()
             {

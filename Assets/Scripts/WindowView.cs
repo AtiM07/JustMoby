@@ -23,9 +23,18 @@ public class WindowView : MonoBehaviour
         var model = GameManager.Instance.Model;
         Header.text = model.Header;
         Description.text = model.Description;
-        SetPrice(RealPrice, GetRealPrice(model.Price, model.Sale));
-        SetPrice(Price, model.Price);
-        SetSale(model.Sale);
+        if (model.Sale > 0)
+        {
+            SetPrice(Price, model.Price);
+            SetPrice(RealPrice, GetRealPrice(model.Price, model.Sale));
+            SetSale(model.Sale);
+        }
+        else
+        {
+            SetPrice(RealPrice, model.Price);
+            ClearSale();
+        }
+        
         SetMainIcon(model.IconName);
         
         BuyButton.onClick.AddListener(() =>
@@ -44,5 +53,13 @@ public class WindowView : MonoBehaviour
     {
         MainIicon.sprite = _itemsImages.MainIconImes.FirstOrDefault(x => x.name == nameElement);
         MainIicon.gameObject.name = MainIicon.sprite!.name;
+    }
+
+    //заглушка на отсуствие скидки
+    private void ClearSale()
+    {
+        Destroy(Sale.transform.parent.gameObject);
+        Destroy(Price.gameObject);
+        RealPrice.gameObject.transform.position = BuyButton.transform.position;
     }
 }

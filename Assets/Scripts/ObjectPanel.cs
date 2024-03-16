@@ -2,6 +2,9 @@
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Панель с массивом предметов
+/// </summary>
 public class ObjectPanel : MonoBehaviour
 { 
         [SerializeField] private ObjectElement _elementPrefab;

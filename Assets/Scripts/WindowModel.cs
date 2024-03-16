@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 
+/// <summary>
+/// Данные окна
+/// </summary>
 public class WindowModel
 {
     public string Header { get; set; }
@@ -10,6 +13,9 @@ public class WindowModel
     public string IconName { get; set; }
 }
 
+/// <summary>
+/// Предмет из массива для окна
+/// </summary>
 public class Object
 {
     public string Name;

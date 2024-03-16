@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Экземпляр предмета
+/// </summary>
 public class ObjectElement : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _countText;

@@ -2,6 +2,9 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Всплывающее окно с информацией
+/// </summary>
 public class InfoPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI MessageText;

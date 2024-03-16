@@ -13,9 +13,12 @@ public class StartWindow : MonoBehaviour
         StartButton.onClick.AddListener(OpenWindow);
     }
 
+    /// <summary>
+    /// Функция открытия окна взависимости от полученных данных
+    /// </summary>
     private void OpenWindow()
     {
-         int.TryParse(CountObject.text.Trim((char)8203), out var count); 
+         int.TryParse(CountObject.text.Trim((char)8203), out var count); //удаление спец.символа из TMP для корректного парсинга 
          
         if (count < 3 || count > 6)
         {
@@ -23,6 +26,7 @@ public class StartWindow : MonoBehaviour
             return;
         }
         
+        //заполнение рандомными данными
         var model = count <5
             ? new WindowModel()
             {
@@ -56,11 +60,5 @@ public class StartWindow : MonoBehaviour
 
         GameManager.Instance.SetModelParameter(model);
         GameManager.Instance.InstanceWindow();
-    }
-
-    private int CheckCount(string value) 
-    {
-        int.TryParse(value, out var count);
-        return count;
     }
 }

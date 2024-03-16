@@ -3,6 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Класс для окна с данными
+/// </summary>
 public class WindowView : MonoBehaviour
 {
     [SerializeField] private TMP_Text Header;

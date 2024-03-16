@@ -8,7 +8,7 @@ using UnityEngine;
 public class ObjectPanel : MonoBehaviour
 { 
         [SerializeField] private ObjectElement _elementPrefab;
-        [SerializeField] private Sprite[] _itemsImages;
+        [SerializeField] private Icons _itemsImages;
 
         private List<ObjectElement> _elements;
         private List<Object> Objects { get; set; }
@@ -31,5 +31,5 @@ public class ObjectPanel : MonoBehaviour
             }
         }
 
-        private Sprite GetIconImage(string nameElement) => _itemsImages.FirstOrDefault(itemsImage => itemsImage.name == nameElement);
+        private Sprite GetIconImage(string nameElement) => _itemsImages.IconImes.FirstOrDefault(itemsImage => itemsImage.name == nameElement);
     }

@@ -13,7 +13,10 @@ public class ObjectElement : MonoBehaviour
     public void Init(Sprite image)
     {
         if (image)
+        {
             _image.sprite = image;
+            gameObject.name = image.name;
+        }
     }
 
     public void ChangeCollect(int count) => _countText.text = count.ToString();

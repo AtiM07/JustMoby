@@ -14,7 +14,7 @@ public class WindowView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI RealPrice;
     [SerializeField] private TextMeshProUGUI Sale;
     [SerializeField] public Image MainIicon;
-    [SerializeField] private Sprite[] _itemsImages;
+    [SerializeField] private Icons _itemsImages;
     
     [SerializeField] private Button BuyButton;
 
@@ -42,6 +42,7 @@ public class WindowView : MonoBehaviour
 
     private void SetMainIcon(string nameElement)
     {
-        MainIicon.sprite = _itemsImages.FirstOrDefault(x => x.name == nameElement);
+        MainIicon.sprite = _itemsImages.MainIconImes.FirstOrDefault(x => x.name == nameElement);
+        MainIicon.gameObject.name = MainIicon.sprite!.name;
     }
 }

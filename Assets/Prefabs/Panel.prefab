@@ -379,11 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _elementPrefab: {fileID: 8121749889182531945, guid: e09af03b64d9a0d4d83699e773572333, type: 3}
-  _itemsImages:
-  - {fileID: 21300000, guid: b7db8cd246816cf4f9d30266c03faad8, type: 3}
-  - {fileID: 21300000, guid: b2563986bdf2a674891378d8f5a0a664, type: 3}
-  - {fileID: 21300000, guid: 0dfab9df014bf1a409f1e58918ac30d8, type: 3}
-  - {fileID: 21300000, guid: a422a02f8163a6040bb27a09a6912efe, type: 3}
+  _itemsImages: {fileID: 11400000, guid: dfa0692bb2fd66046833508cb26e8906, type: 2}
 --- !u!1 &2384468521876233216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,9 +1096,7 @@ MonoBehaviour:
   RealPrice: {fileID: 8275591889553202761}
   Sale: {fileID: 2384468521671469642}
   MainIicon: {fileID: 2384468522247956432}
-  _itemsImages:
-  - {fileID: 21300000, guid: 2c9506bbd7f62dc47a6153f0cd9208ac, type: 3}
-  - {fileID: 21300000, guid: 19dea149431973e48926021c30ddd0f3, type: 3}
+  _itemsImages: {fileID: 11400000, guid: dfa0692bb2fd66046833508cb26e8906, type: 2}
   BuyButton: {fileID: 2384468522043830736}
 --- !u!1 &8968709699418860261
 GameObject:
